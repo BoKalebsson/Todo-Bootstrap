@@ -24,5 +24,41 @@ function getFormData(){
 addButton.addEventListener("click", function() {
     const data = getFormData();
     data.createdAt = new Date();
-    console.log(data);    
+    createToDoItem(data);    
 });
+
+function createToDoItem(data){
+    const cardHTML = `
+    <div class="card m-3 p-2">
+        <div class="d-flex justify-content-between align-items-start">
+            <div>
+            <h6 class="mb-1"><b>${data.title}</b></h6>
+            <small class="text-muted d-block">${data.description}</small>
+        </div>
+
+    <div class="d-flex align-items-start gap-2">
+        <small class="text-muted">Created: ${data.createdAt.toLocaleString()}</small>
+    <div class="btn-group">
+      <button class="btn btn-outline-success btn-sm">
+        <i class="bi bi-check-lg"></i>
+      </button>
+      <button class="btn btn-outline-primary btn-sm">
+        <i class="bi bi-pencil"></i>
+      </button>
+      <button class="btn btn-outline-danger btn-sm">
+        <i class="bi bi-trash"></i>
+      </button>
+    </div> 
+       
+  </div> 
+   
+</div>
+  <div class="mt-2 d-flex gap-2 align-items-center flex-wrap">
+    <small class="text-muted"><i class="bi bi-calendar"></i> Due: ${data.dueDate}</small>
+    <div class="badge bg-info"><i class="bi bi-person"></i> ${data.assignedTo}</div>
+    <div class="badge bg-secondary"><i class="bi bi-paperclip"></i>${data.attachments.length} attachments.</div>
+  </div>
+</div>
+`
+todoList.innerHTML += cardHTML;
+}
