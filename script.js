@@ -81,4 +81,11 @@ todoList.addEventListener("click", function(event){
         return;
     }
 
+    // Mark as completed-method():
+    if (target.closest(".complete-todo")) {
+        const card = target.closest(".card");
+        card.classList.toggle("bg-success-subtle");
+        return;
+    }
+
 });
