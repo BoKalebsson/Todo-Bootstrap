@@ -20,7 +20,7 @@
 
     <div class="card shadow-sm">
         <div class="card-body">
-            <form action="#">
+            <form action="#" id="todoForm">
                 <div class="mb-2">
                     <label for="Title" class="form-label">Title</label>
                     <input type="text" class="form-control" id="Title" />
@@ -68,17 +68,16 @@
                     <button
                         class="btn btn-outline-secondary"
                         type="button"
-                        id="buttonAddToDo"
                     >
                         X
                     </button>
                 </div>
         </div>
 
-        <input class="form-control my-2 p-4 form-control-lg" type="text" />
+        <input class="form-control my-2 p-4 form-control-lg" type="text" id="formPreview"/>
 
         <div>
-            <button type="button" class="btn btn-primary float-end">
+            <button type="button" class="btn btn-primary float-end" id="buttonAddToDo">
                 + Add Todo
             </button>
         </div>
@@ -102,12 +101,14 @@
             </button>
           </div>
         </div>
-<div class="card m-3 p-2">
-  <div class="d-flex justify-content-between align-items-start">
-    <div>
-      <h6 class="mb-1"><b>Example Todo</b></h6>
-      <small class="text-muted d-block">Description goes here</small>
-    </div>
+
+<div id="todoList" class="p-2">
+  <div class="card m-3 p-2">
+    <div class="d-flex justify-content-between align-items-start">
+      <div>
+        <h6 class="mb-1"><b>Example Todo</b></h6>
+        <small class="text-muted d-block">Description goes here</small>
+      </div>
 
     <div class="d-flex align-items-start gap-2">
         <small class="text-muted">Created: 2025-07-01</small>
@@ -134,7 +135,7 @@
 </div>
 
 
-          
+          </div>
         </div>
       </div>
     </div>
